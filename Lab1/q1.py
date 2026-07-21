@@ -29,7 +29,16 @@ def sigmoid(z):
     plt.legend()
     plt.grid(True)
     plt.show()
-# sigmoid(Z)
+# sigmoid(z)
+
+'''
+What are the min and max values for the functions?
+>>> 0 and 1
+Is the output of the function zero-centred?
+>>> No
+What happens to the gradient when the input values are too small or too big?
+>>> The output values goes closer to Zero
+'''
 
 def tanh(z):
     a = []
@@ -49,6 +58,18 @@ def tanh(z):
     plt.grid(True)
     plt.show()
 # tanh(z)
+
+'''
+What are the min and max values for the functions?
+>>> tanh : -1 and 1  ,  Derivative of tanh : 0 and 1
+Is the output of the function zero-centred?
+>>> Yes
+What happens to the gradient when the input values are too small or too big?
+>>> The output values are Zero
+What is the relationship between sigmoid and tanh?
+>>> tanh curve is similar to the sigmoid curve but is much more in a larger scale and also shifted in such a way that 
+it is zero-centered while sigmoid is not.
+'''
 
 def ReLU(z):
     a = []
@@ -74,6 +95,15 @@ def ReLU(z):
     plt.show()
 # ReLU(z)
 
+'''
+What are the min and max values for the functions?
+>>> 0 and 10
+Is the output of the function zero-centred?
+>>> No
+What happens to the gradient when the input values are too small or too big?
+>>> The output of the function is Binary
+'''
+
 def leakyReLU(z):
     alpha = 0.1
     a = []
@@ -97,7 +127,16 @@ def leakyReLU(z):
     plt.legend()
     plt.grid(True)
     plt.show()
-# leakyReLU(z)
+leakyReLU(z)
+
+'''
+What are the min and max values for the functions?
+>>> 0 and 10
+Is the output of the function zero-centred?
+>>> No
+What happens to the gradient when the input values are too small or too big?
+>>> The output values are Binary
+'''
 
 # ================== SOFTMAX =================
 def softmax(z):
@@ -105,6 +144,6 @@ def softmax(z):
     probabilities = exp_z / sum(exp_z)
     return probabilities
 
-output = softmax(z)
-print(output)
-print(np.sum(output))
+# output = softmax(z)
+# print(output)
+# print(np.sum(output))
