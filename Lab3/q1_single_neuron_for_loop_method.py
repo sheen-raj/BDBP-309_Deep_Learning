@@ -1,3 +1,7 @@
+#
+# This script implements backward pass for a single neuron layer using for loops
+#
+
 import numpy as np
 
 inputs = 1, 2, 3, 4
@@ -6,7 +10,6 @@ bias = 1
 y = 25
 lr = 0.01
 epochs = 10
-#======= Forward Pass =============
 
 # Activation function
 def ReLU(z):
@@ -37,6 +40,9 @@ def for_pass(inputs, weights, bias):
     loss = 0.5 * (y_pred - y)**2
     return z, loss, y_pred
 
+
+#======= Backward Pass (Crude) =============
+
 def back_pass(y_pred, z, weights, bias):
     loss_d = loss_der(y_pred)
     # loss_d_global = loss_d
@@ -62,3 +68,4 @@ for epoch in range(epochs):
     print(f"Bias       : {updated_bias:.4f}")
     weights = weights_updated
     bias = updated_bias
+
