@@ -47,7 +47,7 @@ def for_pass(X, W1, B1, W2, B2, W3, B3):
     Z2 = A1 @ W2 + B2
     A2 = ReLU(Z2)
     Z3 = A2 @ W3 + B3
-    A3 = Z3
+    A3 = Z3  # Final output doesnt require the  activation function
 
     y_pred = A3
     # Loss
@@ -57,7 +57,7 @@ def for_pass(X, W1, B1, W2, B2, W3, B3):
 def back_pass(X, W1, B1, W2, B2, W3, B3, y_pred, Z1, A1, Z2, A2):
     # Output layer
     dA3 = loss_der(y_pred)
-    dZ3 = dA3
+    dZ3 = dA3  # Final output doesnt require the  activation function
 
     dW3 = A2.T @ dZ3
     dB3 = dZ3
